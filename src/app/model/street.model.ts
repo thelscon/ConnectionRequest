@@ -1,3 +1,4 @@
+export type tHouseNumber = ( number | string ) [] ;
 export interface iStreet {
     name : string ,
     houseNumber : ( number | string ) [] ;
@@ -6,6 +7,6 @@ export interface iStreet {
 export class Street implements iStreet {
     constructor (
         public name : string ,
-        public houseNumber : ( number | string ) []
+        public houseNumber : tHouseNumber
     ) {}
 }

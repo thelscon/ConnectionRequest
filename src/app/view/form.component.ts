@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 
+import { tHouseNumber } from "../model/street.model";
 import { AllStreets } from "../model/street.data";
 
 @Component ({
@@ -9,16 +10,16 @@ import { AllStreets } from "../model/street.data";
 })
 export class Form {
     public AllStreets = AllStreets ;
-    private _currentStreet : ( number | string ) [] | undefined ;
+    private _streetHouseNumbers : tHouseNumber | undefined ;
 
-    get currentStreet () : ( number | string ) [] | undefined {
-        return this._currentStreet ;
+    get streetHouseNumbers () : tHouseNumber | undefined {
+        return this._streetHouseNumbers ;
     }
-    set currentStreet ( value : ( number | string ) [] | undefined ) {
-        this._currentStreet = value ;
+    set streetHouseNumbers ( value : tHouseNumber | undefined ) {
+        this._streetHouseNumbers = value ;
     }
 
     changeStreetList ( _currentStreet : string ) {
-        this.currentStreet = this.AllStreets.find ( findValue => findValue.name.toLowerCase () === _currentStreet.toLowerCase () )?.houseNumber ;
+        this.streetHouseNumbers = this.AllStreets.find ( findValue => findValue.name.toLowerCase () === _currentStreet.toLowerCase () )?.houseNumber ;
     }
 }

@@ -16,7 +16,7 @@
 <label for="houseNumber">Дом</label>
 <input type="text" id = "houseNumber" list="houseNumber-list" />
 <datalist id = "houseNumber-list">
-    <option *ngFor = "let houseNumber of currentStreet" value="{{ houseNumber }}"></option>
+    <option *ngFor = "let houseNumber of streetHouseNumbers" value="{{ houseNumber }}"></option>
 </datalist>
 
 <label for="apartmentNumber">Квартира</label>
