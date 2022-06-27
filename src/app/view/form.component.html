@@ -1,0 +1,25 @@
+<label for="surname">Фамилия</label>
+<input type="text" id = "surname" />
+
+<label for="name">Инициалы</label>
+<input type="text" id = "name" />
+
+<label for="phone">Телефон</label>
+<input type="text" id = "phone" />
+
+<label for="street">Улица</label>
+<input type="text" id = "street" list="street-list" (change) = "changeStreetList ( $any($event.target).value ) " />
+<datalist id = "street-list">
+    <option *ngFor = "let street of AllStreets" id="{{street.name}}" value="{{ street.name }}"></option>
+</datalist>
+
+<label for="houseNumber">Дом</label>
+<input type="text" id = "houseNumber" list="houseNumber-list" />
+<datalist id = "houseNumber-list">
+    <option *ngFor = "let houseNumber of currentStreet" value="{{ houseNumber }}"></option>
+</datalist>
+
+<label for="apartmentNumber">Квартира</label>
+<input type="text" id = "apartmentNumber" />
+    
+<input type="submit" value="Подать заявку" class="form-submit" />
